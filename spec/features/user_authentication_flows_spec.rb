@@ -31,7 +31,7 @@ describe "User Authentication" do
       end
     end
     it "should fail registration" do
-      visit "/user/new"
+      visit "/users/new"
       user = FactoryGirl.build(:user)
 
       #Invalid form submission
