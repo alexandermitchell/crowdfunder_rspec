@@ -41,6 +41,9 @@ describe "Project Listing" do
     page.find('.navbar ul').click_link('Projects')
     # Expect the page we're on is the Projects page
     expect(current_path).to eq(projects_path)
+
+    page.should have_selector('.navbar ul li.active a', text: "Projects") 
+      expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
   end
 end
 end 
