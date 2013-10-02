@@ -56,13 +56,13 @@ describe "User Authentication" do
       find('.navbar').has_link?('Logout').should be_true
     end
     it "should unsuccessfully log in" do
-      visit '/session/new'
+      visit '/sessions/new'
 
       fill_in "email", with: "a@b.com"
       fill_in "password", with: "invalid creds"
-      click_button "Login"
+      click_button "Log in"
 
-      expect(current_path).to eq(session_path)
+      expect(current_path).to eq(sessions_path)
 
       expect(page).to have_content('Invalid')
     end
