@@ -28,6 +28,7 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'pry-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do 
