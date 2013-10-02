@@ -43,6 +43,10 @@ describe "User Authentication" do
       # ... no message saying "account created" should appear
 
       expect(page).to have_no_content("Account Created")
+
+      within(:css, ".alert") do
+        have_content("Try again")
+      end
     end
   end
 end
