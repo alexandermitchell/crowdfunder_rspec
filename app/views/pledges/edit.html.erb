@@ -1,0 +1,10 @@
+<%= form_for ([@project, @pledge]) do |f| %>
+
+<%= f.label :amount %><br>
+<%= f.number_field :amount %>
+
+<%= f.submit %>
+
+<%= render 'layouts/shared/form_errors' %>
+
+<%end%>
