@@ -42,6 +42,9 @@ describe "Project Listing" do
     # Expect the page we're on is root
     expect(current_path).to eq(root_path)
 
+    # ONLY the projects nav element should be active
+    expect(page).to have_selector('.navbar ul li.active a', count: 1)
+
     # Expect the page to have nav tags
     expect(page).to have_selector('.navbar ul li.active a', text: "Home")
 
