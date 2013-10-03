@@ -3,9 +3,5 @@
   <h5><%= @project.teaser %></h5>
   <p><%= @project.description %></p>
   <p><%= @project.goal %></p>
-  <% if @project.user_id == current_user.id %>
-  <%= link_to "Update Project", edit_my_project_path(@project), class: 'btn btn-warning' %>
-  <%else%>
-  <%= link_to "Back this project", new_project_pledge_path(@project), class: 'btn btn-success' %>
-  <%end%>
+  <%= link_to "Back This Project", new_project_pledge_path(@project), class: 'btn btn-success' %>
 </div>
