@@ -13,5 +13,8 @@ CrowdfunderRspec::Application.routes.draw do
   resources :projects do
     resources :pledges, only: [:new, :create]
   end
-  
+
+  namespace :my do
+    resources :projects
+  end
 end
