@@ -1,2 +1,4 @@
 <h1>Listing projects</h1>
-<%= render 'projects' %>
+<% @projects.each do |project| %>
+<%= render 'projects', target: project %>
+<%end%>

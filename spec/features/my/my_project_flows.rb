@@ -9,7 +9,7 @@ describe "Project Listing" do
       3.times { FactoryGirl.create :project, user: me }
       2.times { FactoryGirl.create :project, user: other_user, title: "Other Dude's Project" }
 
-      visit 'my/projects'
+      visit '/my/projects'
 
       expect(page).to have_selector('div.project', count: 3)
 
@@ -23,12 +23,11 @@ describe "Project Listing" do
 
       visit edit_my_project_path(project)
 
-      fill_in 'project[title]', with: "It is really my project"
+      fill_in 'project[title]', with: "It really is my project"
 
       click_button 'Update Project'
 
       expect(current_path).to eq(my_projects_path)
-
       expect(page).to have_content("It really is my project")
     end
     it "should not be able to edit someone else's project" do
@@ -42,7 +41,7 @@ describe "Project Listing" do
     it "should make projects public" do
       me = setup_signed_in_user
 
-      visit 'my/projects/new'
+      visit '/my/projects/new'
 
       fill_in 'project[title]', with: "Test Project"
       fill_in 'project[teaser]', with: "Test Project Teaser"
@@ -53,5 +52,13 @@ describe "Project Listing" do
 
       expect(current_path).to eq(my_projects_path)
     end
+    it "should display navigation" do
+      user = setup_signed_in_user
+
+      visit '/'
+
+      page.find('.navbar ul').click_link('My Projects')
+      expect(current_path).to eq(my_projects_path)
+    end 
   end
 end

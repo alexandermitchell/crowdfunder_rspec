@@ -1,0 +1,27 @@
+<%= form_for ([:my, @project]) do |f| %>
+
+<%= f.label :title %><br>
+<%= f.text_field :title %>
+
+<%= f.label :teaser %><br>
+<%= f.text_field :teaser %>
+
+<%= f.label :description %><br>
+<%= f.text_field :description %>
+
+<%= f.label :goal %><br>
+<%= f.number_field :goal %><br>
+
+
+<%= f.submit "#{action == 'edit' ? 'Update Project' : 'Publish Project'}" %>
+
+
+<%= render 'layouts/shared/form_errors', target: f.object %>
+
+<%end%>
+
+<%= link_to "Cancel", my_projects_path, class: 'btn btn-default' %>
+
+<% if "#{action == 'edit'}" %>
+<%= link_to "Delete", my_project_path, method: :delete, class: 'btn btn-danger' %>
+<%end%>

@@ -1,3 +1,7 @@
-<% @projects.each do |project| %>
-<h1><%= link_to project.title, project_path(project) %></h1>
-<%end%>
+<div class="jumbotron">
+  <div class="container">
+      <h1><%= target.title %></h1>
+      <p><%= target.teaser %></p>
+      <p><%= link_to "Learn More", project_path(target), class: 'btn btn-primary' %></p>
+  </div>
+</div>
