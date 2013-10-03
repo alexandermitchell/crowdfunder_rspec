@@ -27,6 +27,15 @@ describe Pledge do
     expect(pledge).to have(1).errors_on(:amount)
   end
 
+  it "should require an amount greater than 0" do
+    pledge = FactoryGirl.build(:pledge, amount: -10)
+
+    # Should not be able to save
+    pledge.should_not == pledge.save
+
+    expect(pledge).to have(1).errors_on(:amount)
+  end
+
   it "should require an amount to be an integer" do 
     pledge = FactoryGirl.build(:pledge, amount: 'abc')
 
@@ -34,4 +43,5 @@ describe Pledge do
 
     expect(pledge).to have(1).errors_on(:amount)
   end
+
 end
