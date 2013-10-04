@@ -1,0 +1,11 @@
+<div class="project">
+  <div class="project_header">
+    <h2><%= target.title %></h2>
+    <h5><%= target.teaser %></h4>
+  </div>
+  <div class="project_info">
+    <p><%= target.description %></p>
+    <p><%= target.goal %></p>
+  </div>
+  <span><%= link_to "Update Project", edit_my_project_path(target), class: 'btn btn-warning' %></span>
+</div>

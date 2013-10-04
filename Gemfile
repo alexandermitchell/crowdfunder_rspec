@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'carrierwave'
 
 group :tools do 
 	gem 'guard-rspec'

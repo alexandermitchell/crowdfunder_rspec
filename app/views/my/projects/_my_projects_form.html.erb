@@ -21,7 +21,3 @@
 <%end%>
 
 <%= link_to "Cancel", my_projects_path, class: 'btn btn-default' %>
-
-<% if "#{action == 'edit'}" %>
-<%= link_to "Delete", my_project_path, method: :delete, class: 'btn btn-danger' %>
-<%end%>
