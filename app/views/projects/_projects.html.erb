@@ -1,7 +1,7 @@
-<li class="project">
-  <%= link_to project.title, project %>
-  <br />
-  <p>
-    <%= project.teaser %>
-  </p>
-</li>
+<div class="jumbotron">
+  <div class="container jumbotron_container">
+      <h1><%= link_to target.title, project_path(target) %></h1>
+      <p><%= target.teaser %></p>
+      <p><%= link_to "Learn More", project_path(target), class: 'btn btn-primary' %></p>
+  </div>
+</div>

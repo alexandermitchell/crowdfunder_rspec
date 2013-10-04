@@ -19,13 +19,13 @@ describe "Project Listing" do
 
       # Expect this page has these words as well
       #page.should have_content('Project 1')
-      expect(page).to have_content('Project 1')
+      expect(page).to have_content('Project 3')
 
       #page.should have_content('Project 2')
       expect(page).to have_content('Project 2')
 
       #page.should have_content('Project 3')
-      expect(page).to have_content('Project 3')
+      expect(page).to have_content('Project 1')
 
       # Click a link to the project1's show page
       click_link('Project 1')
@@ -67,7 +67,7 @@ describe "Project Listing" do
 
       expect(page).to have_no_content('Project 41')
 
-      expect(page).to have_selector('li.project', count: 8)
+      expect(page).to have_selector('div.jumbotron', count: 8)
 
       # Expect pagination link and click page 2
       page.find('.pagination').click_link '2'

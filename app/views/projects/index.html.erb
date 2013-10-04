@@ -1,4 +1,8 @@
 <h1>Listing projects</h1>
 <% @projects.each do |project| %>
-<%= render 'projects', target: project %>
+<%= render 'projects/projects', target: project %>
 <%end%>
+
+<div class="paginate">
+<%= paginate @projects %>
+</div>
