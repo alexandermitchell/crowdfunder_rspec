@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "UserMailer" do
   it "new pledge" do
     project = FactoryGirl.create :project
-    pledge = FactoryGirl.create :pledge
+    pledge = FactoryGirl.create :pledge, project: project
     backer = pledge.user
     email = UserMailer.new_pledge(pledge).deliver
 

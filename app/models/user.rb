@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
   has_many :pledges
   attr_accessible :first_name, :last_name, :email, :password
   validates :first_name, :last_name, :email, :password, :presence => true 
+
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

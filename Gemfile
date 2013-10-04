@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'pg'
 gem 'sorcery'
 gem 'jquery-rails'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 group :tools do 
 	gem 'guard-rspec'

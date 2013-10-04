@@ -35,6 +35,14 @@ class My::ProjectsController < ApplicationController
     @nav = :my_projects
   end
 
+  def destroy
+    if @project.destroy
+      redirect_to my_projects_path, notice: "Project Deleted"
+    else
+      render :edit
+    end
+  end
+
   protected
 
   def require_project

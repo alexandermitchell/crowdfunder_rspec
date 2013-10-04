@@ -3,8 +3,8 @@
 <%= f.label :amount %><br>
 <%= f.number_field :amount %>
 
-<%= f.submit %>
+<%= f.submit "Update Pledge" %>
 
-<%= render 'layouts/shared/form_errors' %>
+<%= render 'layouts/shared/form_errors' :target => f.object %>
 
 <%end%>
